@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar - Onur Kazan Özel Portal</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">OK</div>
+                    <span>Onur Kazan <strong>Portal</strong></span>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Onur</span>
+                    <span class="user-role">Yönetici</span>
+                </div>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23810CA8'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23C147E9'/%3E%3C/svg%3E" alt="Profil">
+                </div>
+                <div class="user-dropdown">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-menu">
+                    <a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-widget">
+                <h3>Menü</h3>
+                <ul class="quick-links">
+                    <li><a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="#"><i class="fas fa-video"></i> Videolar</a></li>
+                    <li><a href="#"><i class="fas fa-image"></i> Fotoğraflar</a></li>
+                    <li><a href="#"><i class="fas fa-file"></i> Dosyalar</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i> Projeler</a></li>
+                    <li><a href="iletisim.html"><i class="fas fa-address-book"></i> İletişim</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Mesajlar</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Müşteriler</a></li>
+                    <li><a href="ayarlar.html" class="active"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Yardım</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Settings Header -->
+            <div class="settings-header">
+                <h1><i class="fas fa-cog"></i> Ayarlar</h1>
+                <p>Hesap bilgilerinizi ve tercihlerinizi yönetin</p>
+            </div>
+
+            <!-- Settings Tabs -->
+            <div class="settings-tabs">
+                <button class="tab-btn active" data-tab="profile">Profil Bilgileri</button>
+                <button class="tab-btn" data-tab="security">Güvenlik</button>
+                <button class="tab-btn" data-tab="preferences">Tercihler</button>
+            </div>
+
+            <!-- Profile Settings -->
+            <div class="settings-content active" id="profile-tab">
+                
+            <div class="settings-card">
+                    <h2><i class="fas fa-camera"></i> Profil Resmi</h2>
+                    <div class="avatar-upload">
+                        <div class="avatar-preview">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23810CA8'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23C147E9'/%3E%3C/svg%3E" alt="Profil" id="avatarPreview">
+                        </div>
+                        <div class="avatar-actions">
+                            <input type="file" id="avatarUpload" accept="image/*" hidden>
+                            <button type="button" class="btn btn-secondary" id="uploadTrigger">Resim Seç</button>
+                            <button type="button" class="btn btn-outline">Kaldır</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h2><i class="fas fa-user"></i> Kişisel Bilgiler</h2>
+                    <form class="settings-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="firstName">Ad</label>
+                                <input type="text" id="firstName" value="Onur" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Soyad</label>
+                                <input type="text" id="lastName" value="Kazan" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="email">E-posta Adresi</label>
+                                <input type="email" id="email" value="onur@onurkazan.com.tr" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="phone">Telefon Numarası</label>
+                                <input type="tel" id="phone" value="+90 555 123 45 67">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                             <label for="position">Pozisyon <span class="required">*</span></label>
+                             <div class="readonly-field">
+                                 <input type="text" id="position" value="Yönetici" readonly>
+                                 <span class="field-info">Değiştirilemez</span>
+                                 <div class="tooltip">
+                                 <i class="fas fa-info-circle"></i>
+                             <div class="tooltip-text">Pozisyonunuzu değiştirmek için yöneticinizle iletişime geçin</div>
+                                </div>
+                             </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="bio">Hakkımda</label>
+                            <textarea id="bio" rows="4">Web geliştirici ve tasarımcıyım. Özel portal projeleri üzerine çalışıyorum.</textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary">İptal</button>
+                            <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="settings-content" id="security-tab">
+                <div class="settings-card">
+                    <h2><i class="fas fa-lock"></i> Şifre Değiştir</h2>
+                    <form class="settings-form">
+                        <div class="input-group">
+                            <label for="currentPassword">Mevcut Şifre</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="newPassword">Yeni Şifre</label>
+                                <input type="password" id="newPassword" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="confirmPassword">Yeni Şifre (Tekrar)</label>
+                                <input type="password" id="confirmPassword" required>
+                            </div>
+                        </div>
+                        
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="strength-text">Orta güçlülükte</span>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary">İptal</button>
+                            <button type="submit" class="btn btn-primary">Şifreyi Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="settings-card">
+                    <h2><i class="fas fa-shield-alt"></i> Güvenlik Seçenekleri</h2>
+                    <div class="security-options">
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>İki Faktörlü Kimlik Doğrulama</h3>
+                                <p>Hesabınıza ek güvenlik katmanı ekleyin</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>E-posta Bildirimleri</h3>
+                                <p>Önemli hesap etkinlikleri hakkında e-posta alın</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>Oturum Yönetimi</h3>
+                                <p>Aktif oturumları görüntüle ve yönet</p>
+                            </div>
+                            <button class="btn btn-outline">Oturumları Görüntüle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences Settings -->
+            <div class="settings-content" id="preferences-tab">
+                <div class="settings-card">
+                    <h2><i class="fas fa-paint-brush"></i> Görünüm Ayarları</h2>
+                    <div class="preference-options">
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>Tema</h3>
+                                <p>Arayüz temasını seçin</p>
+                            </div>
+                            <div class="theme-selector">
+                                <button class="theme-option active" data-theme="dark">
+                                    <span class="theme-preview dark"></span>
+                                    Koyu
+                                </button>
+                                <button class="theme-option" data-theme="light">
+                                    <span class="theme-preview light"></span>
+                                    Açık
+                                </button>
+                                <button class="theme-option" data-theme="auto">
+                                    <span class="theme-preview auto"></span>
+                                    Otomatik
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>Dil</h3>
+                                <p>Arayüz dilini seçin</p>
+                            </div>
+                            <select class="language-select">
+                                <option value="tr" selected>Türkçe</option>
+                                <option value="en">English</option>
+                                <option value="de">Deutsch</option>
+                                <option value="fr">Français</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h2><i class="fas fa-bell"></i> Bildirim Ayarları</h2>
+                    <div class="notification-options">
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>E-posta Bildirimleri</h3>
+                                <p>Önemli güncellemeleri e-posta ile al</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>Anlık Bildirimler</h3>
+                                <p>Masaüstü bildirimleri göster</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <div class="option-info">
+                                <h3>Sesli Uyarılar</h3>
+                                <p>Önemli olaylarda ses çal</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2023 portal.onurkazan.com.tr - Tüm hakları saklıdır.</p>
+                <p>Son güncelleme: 20 Eylül 2023</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Destek</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/ayarlar.js"></script>
+</body>
+</html>

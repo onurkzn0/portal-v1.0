@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Onur Kazan Özel Portal</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">OK</div>
+                    <span>Onur Kazan <strong>Portal</strong></span>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Onur Kazan</span>
+                    <span class="user-role">Yönetici</span>
+                </div>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23810CA8'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23C147E9'/%3E%3C/svg%3E" alt="Profil">
+                </div>
+                <div class="user-dropdown">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-menu">
+                    <a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+                    <a href="ayarlar.html"><i class="fas fa-cog"></i> Ayarlar</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-widget">
+                <h3>Menü</h3>
+                <ul class="quick-links">
+                    <li><a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="#"><i class="fas fa-video"></i> Videolar</a></li>
+                    <li><a href="#"><i class="fas fa-image"></i> Fotoğraflar</a></li>
+                    <li><a href="#"><i class="fas fa-file"></i> Dosyalar</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i> Projeler</a></li>
+                    <li><a href="iletisim.html" class="active"><i class="fas fa-address-book"></i> İletişim</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Mesajlar</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Müşteriler</a></li>
+                    <li><a href="ayarlar.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Yardım</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Contact Header -->
+            <div class="contact-header">
+                <h1><i class="fas fa-envelope"></i> İletişim & Destek</h1>
+                <p>Teknik destek alın, öneri ve şikayetlerinizi bize iletin</p>
+            </div>
+
+            <!-- Talepler Sekmeleri -->
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="new-request">Yeni Talep Oluştur</button>
+                    <button class="tab-btn" data-tab="my-requests">Taleplerim <span class="badge">3</span></button>
+                </div>
+            </div>
+
+            <!-- Yeni Talep Oluşturma -->
+            <div class="tab-content active" id="new-request-tab">
+                <!-- Contact Methods -->
+                <div class="contact-methods">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Teknik Destek</h3>
+                        <p>Sistemle ilgili teknik sorunlarınız için destek talebi oluşturun</p>
+                        <button class="btn btn-primary" id="supportBtn">Destek Talebi Oluştur</button>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Öneri Bildir</h3>
+                        <p>Portalı geliştirmemiz için önerilerinizi paylaşın</p>
+                        <button class="btn btn-primary" id="suggestionBtn">Öneri Gönder</button>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h3>Şikayet Bildir</h3>
+                        <p>Yaşadığınız sorunları veya memnuniyetsizlikleri bildirin</p>
+                        <button class="btn btn-primary" id="complaintBtn">Şikayet Gönder</button>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container" id="contactForm">
+                    <div class="settings-card">
+                        <h2 id="formTitle"><i class="fas fa-edit"></i> İletişim Formu</h2>
+                        <form id="communicationForm">
+                            <input type="hidden" id="messageType" name="messageType" value="support">
+                            
+                            <div class="input-group">
+                                <label for="subject">Konu</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Mesajınızın konusunu yazın">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="description">Açıklama</label>
+                                <textarea id="description" name="description" rows="6" required placeholder="Sorununuzu, önerinizi veya şikayetinizi detaylı bir şekilde açıklayın"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="urgency">Aciliyet Durumu</label>
+                                <select id="urgency" name="urgency">
+                                    <option value="low">Düşük - Genel soru/öneri</option>
+                                    <option value="medium" selected>Orta - Fonksiyonel sorun</option>
+                                    <option value="high">Yüksek - Sistem çalışmıyor</option>
+                                    <option value="critical">Kritik - Acil müdahale gerekiyor</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="attachments">Dosya Eki (Maksimum 3 dosya)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="attachments" name="attachments" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" hidden>
+                                    <button type="button" class="btn btn-outline" id="fileUploadBtn">Dosya Seç</button>
+                                    <span id="fileNames">Dosya seçilmedi</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancelBtn">İptal</button>
+                                <button type="submit" class="btn btn-primary">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="settings-card">
+                        <h2><i class="fas fa-info-circle"></i> İletişim Bilgileri</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>E-posta</h3>
+                                    <p>destek@onurkazan.com.tr</p>
+                                    <small>Yanıt süresi: 24 saat</small>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Telefon</h3>
+                                    <p>+90 555 123 45 67</p>
+                                    <small>Çalışma saatleri: 09:00 - 18:00</small>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Yanıt Süresi</h3>
+                                    <p>Teknik destek: 2 iş günü</p>
+                                    <small>Diğer konular: 3 iş günü</small>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Talep Numarası</h3>
+                                    <p>#TK-2023-<span id="ticketNumber">00125</span></p>
+                                    <small>Sonraki referans için</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <div class="settings-card">
+                        <h2><i class="fas fa-question-circle"></i> Sıkça Sorulan Sorular</h2>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Teknik destek talebim ne zaman yanıtlanır?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Teknik destek talepleriniz en geç 2 iş günü içinde yanıtlanır. Acil durumlarda lütfen aciliyet seviyesini "Yüksek" veya "Kritik" olarak işaretleyin.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Hangi dosya türlerini ekleyebilirim?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>JPG, PNG, PDF, DOC ve DOCX dosya türlerini ekleyebilirsiniz. Toplam dosya boyutu 10MB'ı geçmemelidir.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taleplerim -->
+            <div class="tab-content" id="my-requests-tab">
+                <div class="requests-header">
+                    <h2><i class="fas fa-list"></i> Taleplerim</h2>
+                    <div class="requests-filter">
+                        <select id="statusFilter">
+                            <option value="all">Tümü</option>
+                            <option value="open">Açık</option>
+                            <option value="answered">Yanıt Bekliyor</option>
+                            <option value="resolved">Çözüldü</option>
+                            <option value="closed">Kapalı</option>
+                        </select>
+                        <button class="btn btn-outline" id="refreshBtn">
+                            <i class="fas fa-sync-alt"></i> Yenile
+                        </button>
+                    </div>
+                </div>
+
+                <div class="requests-list">
+                    <!-- Talep 1 -->
+                    <div class="request-item" data-status="answered">
+                        <div class="request-header">
+                            <div class="request-info">
+                                <h3>#TK-2023-00124 - Login sorunu</h3>
+                                <div class="request-meta">
+                                    <span class="request-type">Teknik Destek</span>
+                                    <span class="request-date">20 Eyl 2023, 14:30</span>
+                                </div>
+                            </div>
+                            <div class="request-status status-answered">
+                                <i class="fas fa-clock"></i> Yanıt Bekliyor
+                            </div>
+                        </div>
+                        <div class="request-preview">
+                            <p>Şifremi unuttum sayfası çalışmıyor. E-posta adresime sıfırlama linki gelmiyor.</p>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-outline view-details" data-id="124">
+                                <i class="fas fa-eye"></i> Detayları Görüntüle
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Talep 2 -->
+                    <div class="request-item" data-status="open">
+                        <div class="request-header">
+                            <div class="request-info">
+                                <h3>#TK-2023-00123 - Raporlama özelliği önerisi</h3>
+                                <div class="request-meta">
+                                    <span class="request-type">Öneri</span>
+                                    <span class="request-date">19 Eyl 2023, 10:15</span>
+                                </div>
+                            </div>
+                            <div class="request-status status-open">
+                                <i class="fas fa-circle"></i> Açık
+                            </div>
+                        </div>
+                        <div class="request-preview">
+                            <p>Raporlama ekranına yeni grafik türleri ve filtreleme seçenekleri eklenebilir.</p>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-outline view-details" data-id="123">
+                                <i class="fas fa-eye"></i> Detayları Görüntüle
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Talep 3 -->
+                    <div class="request-item" data-status="resolved">
+                        <div class="request-header">
+                            <div class="request-info">
+                                <h3>#TK-2023-00122 - Mobil uyumluluk sorunu</h3>
+                                <div class="request-meta">
+                                    <span class="request-type">Şikayet</span>
+                                    <span class="request-date">18 Eyl 2023, 16:45</span>
+                                </div>
+                            </div>
+                            <div class="request-status status-resolved">
+                                <i class="fas fa-check-circle"></i> Çözüldü
+                            </div>
+                        </div>
+                        <div class="request-preview">
+                            <p>Mobil cihazlarda tablo görünümü bozuk çıkıyor. Kaydırma yaparken sorun yaşıyorum.</p>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-outline view-details" data-id="122">
+                                <i class="fas fa-eye"></i> Detayları Görüntüle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Talep Detay Modal -->
+            <div class="modal" id="requestModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalTitle">Talep Detayları</h2>
+                        <button class="modal-close" id="modalClose">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="request-detail-header">
+                            <div class="request-detail-info">
+                                <h3 id="detailSubject">#TK-2023-00124 - Login sorunu</h3>
+                                <div class="request-detail-meta">
+                                    <span class="request-detail-type" id="detailType">Teknik Destek</span>
+                                    <span class="request-detail-date" id="detailDate">20 Eyl 2023, 14:30</span>
+                                    <span class="request-detail-status" id="detailStatus">Yanıt Bekliyor</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conversation-container">
+                            <div class="conversation">
+                                <!-- Kullanıcı mesajı -->
+                                <div class="message user-message">
+                                    <div class="message-header">
+                                        <strong>Onur Kazan</strong>
+                                        <span>20 Eyl 2023, 14:30</span>
+                                    </div>
+                                    <div class="message-content">
+                                        <p>Şifremi unuttum sayfası çalışmıyor. E-posta adresime sıfırlama linki gelmiyor. Acil çözüm gerekiyor.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Destek ekibi yanıtı -->
+                                <div class="message support-message">
+                                    <div class="message-header">
+                                        <strong>Destek Ekibi</strong>
+                                        <span>20 Eyl 2023, 15:45</span>
+                                    </div>
+                                    <div class="message-content">
+                                        <p>Merhaba, sorununuzu inceledik. E-posta sunucusunda yaşanan geçici bir sorundan kaynaklanıyor. Şu an çözülmüş durumda. Lütfen tekrar deneyiniz.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Yanıt Formu -->
+                        <div class="response-form">
+                            <h4>Yanıt Ekle</h4>
+                            <form id="responseForm">
+                                <div class="input-group">
+                                    <textarea id="responseMessage" rows="4" placeholder="Yanıtınızı buraya yazın..."></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Gönder</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2023 portal.onurkazan.com.tr - Tüm hakları saklıdır.</p>
+                <p>Son güncelleme: 20 Eylül 2023</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Destek</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/iletisim.js"></script>
+</body>
+</html>

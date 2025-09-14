@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onur Kazan Özel Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="portal-header">
+            <div class="portal-logo">OK</div>
+            <h2>Onur Kazan</h2>
+            <p>Özel Portal</p>
+        </div>
+        
+        <div class="login-header">
+            <h1 id="formTitle">Portal Girişi</h1>
+            <p id="formDescription">Lütfen hesabınıza erişmek için giriş yapın</p>
+        </div>
+        
+        <!-- Giriş Formu -->
+        <form id="loginForm" class="active-form">
+            <div class="input-group">
+                <label for="username">Kullanıcı Adı</label>
+                <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+            </div>
+            <button type="submit" class="login-button">Giriş Yap</button>
+        </form>
+        
+        <!-- Şifre Sıfırlama Formu -->
+        <form id="resetForm" class="hidden-form">
+            <div class="input-group">
+                <label for="email">E-posta Adresi</label>
+                <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+            </div>
+            <p class="info-text">Şifre sıfırlama bağlantısı e-posta adresinize gönderilecektir.</p>
+            <button type="submit" class="login-button">Şifremi Sıfırla</button>
+        </form>
+        
+        <!-- Kayıt Formu -->
+        <form id="registerForm" class="hidden-form">
+            <div class="input-group">
+                <label for="regUsername">Kullanıcı Adı</label>
+                <input type="text" id="regUsername" name="regUsername" placeholder="Kullanıcı adınızı girin" required>
+            </div>
+            <div class="input-group">
+                <label for="regEmail">E-posta Adresi</label>
+                <input type="email" id="regEmail" name="regEmail" placeholder="E-posta adresinizi girin" required>
+            </div>
+            <div class="input-group">
+                <label for="regPassword">Şifre</label>
+                <input type="password" id="regPassword" name="regPassword" placeholder="Şifrenizi oluşturun" required>
+            </div>
+            <div class="input-group">
+                <label for="regPasswordConfirm">Şifre Tekrar</label>
+                <input type="password" id="regPasswordConfirm" name="regPasswordConfirm" placeholder="Şifrenizi tekrar girin" required>
+            </div>
+            <button type="submit" class="login-button">Hesap Oluştur</button>
+        </form>
+        
+        <div class="additional-links">
+            <a href="#" id="forgotPasswordLink">Şifremi Unuttum</a>
+            <a href="#" id="createAccountLink">Hesap Oluştur</a>
+            <a href="#" id="backToLoginLink" class="hidden-link">Girişe Dön</a>
+        </div>
+    </div>
+
+    <!-- Özel Uyarı Kutusu -->
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <span class="alert-close">&times;</span>
+            <div class="alert-icon" id="alertIcon"></div>
+            <h3 id="alertTitle">Başlık</h3>
+            <p id="alertMessage">Mesaj içeriği buraya gelecek.</p>
+            <button id="alertButton" class="alert-button">Tamam</button>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        &copy; 2023 portal.onurkazan.com.tr - Tüm hakları saklıdır.
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

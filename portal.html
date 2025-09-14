@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa - Onur Kazan Özel Portal</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">OK</div>
+                    <span>Onur<strong>Portal</strong></span>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Onur Kazan</span>
+                    <span class="user-role">Yönetici</span>
+                </div>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23810CA8'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23C147E9'/%3E%3C/svg%3E" alt="Profil">
+                </div>
+                <div class="user-dropdown">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-menu">
+                    <a href="ayarlar.html"><i class="fas fa-cog"></i> Ayarlar</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-widget">
+                <h3>Hızlı Erişim</h3>
+                <ul class="quick-links">
+                    <li><a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="#"><i class="fas fa-video"></i> Videolar</a></li>
+                    <li><a href="#"><i class="fas fa-image"></i> Fotoğraflar</a></li>
+                    <li><a href="#"><i class="fas fa-file"></i> Dosyalar</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i> Projeler</a></li>
+                    <li><a href="iletisim.html"><i class="fas fa-address-book"></i> İletişim</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Mesajlar</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Müşteriler</a></li>
+                    <li><a href="ayarlar.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Yardım</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h1>Hoş Geldin, Onur</h1>
+                    <p>Son giriş: 20 Eylül 2023, 14:30 | <span class="online-status">Çevrimiçi</span></p>
+                </div>
+                <div class="welcome-actions">
+                    <button class="btn btn-primary"><i class="fas fa-bell"></i> Bildirimler</button>
+                    <button class="btn btn-secondary"><i class="fas fa-envelope"></i> Mesajlar</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Widgets -->
+            <div class="dashboard-grid" id="dashboardGrid">
+                <!-- İçerik Sayıları -->
+                <div class="widget" draggable="true">
+                    <div class="widget-header">
+                        <h3>İçerik Sayıları</h3>
+                        <div class="widget-actions">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="widget-content">
+                        <div class="content-stats">
+                            <div class="content-item">
+                                <div class="content-icon video">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="content-info">
+                                    <span class="content-value">124</span>
+                                    <span class="content-label">Video</span>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-icon image">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                                <div class="content-info">
+                                    <span class="content-value">568</span>
+                                    <span class="content-label">Fotoğraf</span>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-icon file">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="content-info">
+                                    <span class="content-value">342</span>
+                                    <span class="content-label">Dosya</span>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-icon project">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="content-info">
+                                    <span class="content-value">28</span>
+                                    <span class="content-label">Proje</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Son Etkinlikler -->
+                <div class="widget" draggable="true">
+                    <div class="widget-header">
+                        <h3>Son Etkinlikler</h3>
+                        <div class="widget-actions">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="widget-content">
+                        <ul class="activity-list">
+                            <li>
+                                <i class="fas fa-file-alt activity-icon"></i>
+                                <div class="activity-content">
+                                    <span class="activity-title">Yeni rapor oluşturuldu</span>
+                                    <span class="activity-time">2 dakika önce</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-plus activity-icon"></i>
+                                <div class="activity-content">
+                                    <span class="activity-title">Yeni müşteri eklendi</span>
+                                    <span class="activity-time">1 saat önce</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle activity-icon"></i>
+                                <div class="activity-content">
+                                    <span class="activity-title">Proje tamamlandı</span>
+                                    <span class="activity-time">3 saat önce</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-comment activity-icon"></i>
+                                <div class="activity-content">
+                                    <span class="activity-title">Yeni yorum eklendi</span>
+                                    <span class="activity-time">Dün, 16:45</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hava Durumu -->
+                <div class="widget" draggable="true">
+                    <div class="widget-header">
+                        <h3>Hava Durumu</h3>
+                        <div class="widget-actions">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="widget-content">
+                        <div class="weather-widget">
+                            <div class="weather-current">
+                                <i class="fas fa-sun" id="weatherIcon"></i>
+                                <div class="weather-info">
+                                    <span class="weather-temp" id="weatherTemp">--°C</span>
+                                    <span class="weather-desc" id="weatherDesc">Yükleniyor...</span>
+                                </div>
+                            </div>
+                            <div class="weather-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="weatherLocation">Konum alınıyor...</span>
+                            </div>
+                            <div class="weather-details">
+                                <div class="weather-detail">
+                                    <span>Nem</span>
+                                    <span id="weatherHumidity">--%</span>
+                                </div>
+                                <div class="weather-detail">
+                                    <span>Rüzgar</span>
+                                    <span id="weatherWind">-- km/s</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Indicators for Mobile -->
+            <div class="slider-indicators" id="sliderIndicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+            </div>
+
+            <!-- Recent Projects Table -->
+            <div class="table-section">
+                <div class="section-header">
+                    <h2>Son Projeler</h2>
+                    <button class="btn btn-primary">Tümünü Görüntüle</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Proje Adı</th>
+                                <th>Müşteri</th>
+                                <th class="hide-on-mobile">Başlangıç</th>
+                                <th class="hide-on-mobile">Bitiş</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>E-Ticaret Sitesi</td>
+                                <td>Moda A.Ş.</td>
+                                <td class="hide-on-mobile">10 Ağu 2023</td>
+                                <td class="hide-on-mobile">15 Eki 2023</td>
+                                <td><span class="status-badge progress">Devam Ediyor</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kurumsal Kimlik</td>
+                                <td>Teknoloji Ltd.</td>
+                                <td class="hide-on-mobile">01 Eyl 2023</td>
+                                <td class="hide-on-mobile">30 Eyl 2023</td>
+                                <td><span class="status-badge completed">Tamamlandı</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mobil Uygulama</td>
+                                <td>StartUp Co.</td>
+                                <td class="hide-on-mobile">15 Eyl 2023</td>
+                                <td class="hide-on-mobile">15 Ara 2023</td>
+                                <td><span class="status-badge pending">Beklemede</span></td>
+                                <td>
+                                    <button class="icon-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="icon-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2023 portal.onurkazan.com.tr - Tüm hakları saklıdır.</p>
+                <p>Son güncelleme: 20 Eylül 2023</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Destek</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/portal.js"></script>
+</body>
+</html>

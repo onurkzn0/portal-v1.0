@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcılar - Onur Kazan Özel Portal</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">OK</div>
+                    <span>Onur Kazan <strong>Portal</strong></span>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Onur Kazan</span>
+                    <span class="user-role">Yönetici</span>
+                </div>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23810CA8'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23C147E9'/%3E%3C/svg%3E" alt="Profil">
+                </div>
+                <div class="user-dropdown">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-menu">
+                    <a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a>
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-widget">
+                <h3>Menü</h3>
+                <ul class="quick-links">
+                    <li><a href="portal.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="#"><i class="fas fa-video"></i> Videolar</a></li>
+                    <li><a href="#"><i class="fas fa-image"></i> Fotoğraflar</a></li>
+                    <li><a href="#"><i class="fas fa-file"></i> Dosyalar</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i> Projeler</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> İletişim</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Mesajlar</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                    <li><a href="users.html" class="active"><i class="fas fa-users"></i> Kullanıcılar</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Yardım</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Users Header -->
+            <div class="users-header">
+                <h1><i class="fas fa-users"></i> Kullanıcılar</h1>
+                <p>Sistemde kayıtlı kullanıcıları görüntüleyin ve iletişime geçin</p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="users-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="userSearch" placeholder="Kullanıcı adı, departman veya pozisyon ara...">
+                </div>
+                
+                <div class="filter-controls">
+                    <select id="departmentFilter">
+                        <option value="all">Tüm Departmanlar</option>
+                        <option value="development">Yazılım Geliştirme</option>
+                        <option value="design">Tasarım</option>
+                        <option value="marketing">Pazarlama</option>
+                        <option value="sales">Satış</option>
+                        <option value="support">Destek</option>
+                    </select>
+                    
+                    <select id="statusFilter">
+                        <option value="all">Tüm Durumlar</option>
+                        <option value="online">Çevrimiçi</option>
+                        <option value="offline">Çevrimdışı</option>
+                        <option value="busy">Meşgul</option>
+                        <option value="away">Uzakta</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Users Grid -->
+            <div class="users-grid" id="usersGrid">
+                <!-- User Card 1 -->
+                <div class="user-card" data-department="development" data-status="online">
+                    <div class="user-card-header">
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%232575fc'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%236a11cb'/%3E%3C/svg%3E" alt="Ahmet Yılmaz">
+                            <span class="user-status online"></span>
+                        </div>
+                        <div class="user-info">
+                            <h3>Ahmet Yılmaz</h3>
+                            <p>Frontend Developer</p>
+                            <span class="user-department">Yazılım Geliştirme</span>
+                        </div>
+                    </div>
+                    <div class="user-card-body">
+                        <div class="user-stats">
+                            <div class="stat">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Proje</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Görev</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">98%</span>
+                                <span class="stat-label">Aktif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-card-footer">
+                        <button class="btn btn-primary message-btn" data-userid="101">
+                            <i class="fas fa-comment"></i> Mesaj Gönder
+                        </button>
+                        <button class="btn btn-outline profile-btn" data-userid="101">
+                            <i class="fas fa-user"></i> Profil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Card 2 -->
+                <div class="user-card" data-department="design" data-status="online">
+                    <div class="user-card-header">
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23eea849'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23f46b45'/%3E%3C/svg%3E" alt="Zeynep Kaya">
+                            <span class="user-status online"></span>
+                        </div>
+                        <div class="user-info">
+                            <h3>Zeynep Kaya</h3>
+                            <p>UI/UX Designer</p>
+                            <span class="user-department">Tasarım</span>
+                        </div>
+                    </div>
+                    <div class="user-card-body">
+                        <div class="user-stats">
+                            <div class="stat">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Proje</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Görev</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">92%</span>
+                                <span class="stat-label">Aktif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-card-footer">
+                        <button class="btn btn-primary message-btn" data-userid="102">
+                            <i class="fas fa-comment"></i> Mesaj Gönder
+                        </button>
+                        <button class="btn btn-outline profile-btn" data-userid="102">
+                            <i class="fas fa-user"></i> Profil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Card 3 -->
+                <div class="user-card" data-department="marketing" data-status="busy">
+                    <div class="user-card-header">
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23FF416C'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23FF4B2B'/%3E%3C/svg%3E" alt="Mehmet Demir">
+                            <span class="user-status busy"></span>
+                        </div>
+                        <div class="user-info">
+                            <h3>Mehmet Demir</h3>
+                            <p>Digital Marketing Specialist</p>
+                            <span class="user-department">Pazarlama</span>
+                        </div>
+                    </div>
+                    <div class="user-card-body">
+                        <div class="user-stats">
+                            <div class="stat">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Kampanya</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Görev</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">85%</span>
+                                <span class="stat-label">Aktif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-card-footer">
+                        <button class="btn btn-primary message-btn" data-userid="103">
+                            <i class="fas fa-comment"></i> Mesaj Gönder
+                        </button>
+                        <button class="btn btn-outline profile-btn" data-userid="103">
+                            <i class="fas fa-user"></i> Profil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Card 4 -->
+                <div class="user-card" data-department="sales" data-status="offline">
+                    <div class="user-card-header">
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%2338ef7d'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%2311998e'/%3E%3C/svg%3E" alt="Ayşe Çelik">
+                            <span class="user-status offline"></span>
+                        </div>
+                        <div class="user-info">
+                            <h3>Ayşe Çelik</h3>
+                            <p>Sales Manager</p>
+                            <span class="user-department">Satış</span>
+                        </div>
+                    </div>
+                    <div class="user-card-body">
+                        <div class="user-stats">
+                            <div class="stat">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Müşteri</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">7</span>
+                                <span class="stat-label">Görev</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">78%</span>
+                                <span class="stat-label">Aktif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-card-footer">
+                        <button class="btn btn-primary message-btn" data-userid="104">
+                            <i class="fas fa-comment"></i> Mesaj Gönder
+                        </button>
+                        <button class="btn btn-outline profile-btn" data-userid="104">
+                            <i class="fas fa-user"></i> Profil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Card 5 -->
+                <div class="user-card" data-department="support" data-status="away">
+                    <div class="user-card-header">
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%234a00e0'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%238e2de2'/%3E%3C/svg%3E" alt="Ali Öztürk">
+                            <span class="user-status away"></span>
+                        </div>
+                        <div class="user-info">
+                            <h3>Ali Öztürk</h3>
+                            <p>Technical Support</p>
+                            <span class="user-department">Destek</span>
+                        </div>
+                    </div>
+                    <div class="user-card-body">
+                        <div class="user-stats">
+                            <div class="stat">
+                                <span class="stat-value">23</span>
+                                <span class="stat-label">Destek</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4</span>
+                                <span class="stat-label">Görev</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">96%</span>
+                                <span class="stat-label">Aktif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-card-footer">
+                        <button class="btn btn-primary message-btn" data-userid="105">
+                            <i class="fas fa-comment"></i> Mesaj Gönder
+                        </button>
+                        <button class="btn btn-outline profile-btn" data-userid="105">
+                            <i class="fas fa-user"></i> Profil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Card 6 -->
+                <div class="user-card" data-department="development" data-status="online">
+                    <div class="user-card-header">
+                        <div class="user-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='30' fill='%23FF416C'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23FF4B2B'/%3E%3C/svg%3E" alt="Fatma Yıldız">
+                            <span class="user-status online"></span>
+                        </div>
+                        <div class="user-info">
+                            <h3>Fatma Yıldız</h3>
+                            <p>Backend Developer</p>
+                            <span class="user-department">Yazılım Geliştirme</span>
+                        </div>
+                    </div>
+                    <div class="user-card-body">
+                        <div class="user-stats">
+                            <div class="stat">
+                                <span class="stat-value">9</span>
+                                <span class="stat-label">Proje</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Görev</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">91%</span>
+                                <span class="stat-label">Aktif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-card-footer">
+                        <button class="btn btn-primary message-btn" data-userid="106">
+                            <i class="fas fa-comment"></i> Mesaj Gönder
+                        </button>
+                        <button class="btn btn-outline profile-btn" data-userid="106">
+                            <i class="fas fa-user"></i> Profil
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more">
+                <button class="btn btn-outline" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i> Daha Fazla Yükle
+                </button>
+            </div>
+
+            <!-- Mesaj Gönderme Modal -->
+            <div class="modal" id="messageModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="messageModalTitle">Mesaj Gönder</h2>
+                        <button class="modal-close" id="messageModalClose">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="message-recipient">
+                            <div class="recipient-avatar">
+                                <img id="recipientAvatar" src="" alt="">
+                                <span class="user-status" id="recipientStatus"></span>
+                            </div>
+                            <div class="recipient-info">
+                                <h3 id="recipientName"></h3>
+                                <p id="recipientPosition"></p>
+                            </div>
+                        </div>
+
+                        <form id="messageForm">
+                            <div class="input-group">
+                                <label for="messageSubject">Konu</label>
+                                <input type="text" id="messageSubject" placeholder="Mesaj konusu">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="messageContent">Mesaj</label>
+                                <textarea id="messageContent" rows="5" placeholder="Mesajınızı buraya yazın..."></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancelMessageBtn">İptal</button>
+                                <button type="submit" class="btn btn-primary">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profil Görüntüleme Modal -->
+            <div class="modal" id="profileModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="profileModalTitle">Kullanıcı Profili</h2>
+                        <button class="modal-close" id="profileModalClose">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img id="profileAvatar" src="" alt="">
+                                <span class="user-status" id="profileStatus"></span>
+                            </div>
+                            <div class="profile-info">
+                                <h3 id="profileName"></h3>
+                                <p id="profilePosition"></p>
+                                <span class="profile-department" id="profileDepartment"></span>
+                            </div>
+                        </div>
+
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <span id="profileEmail"></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span id="profilePhone"></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span id="profileJoinDate"></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="profileLocation"></span>
+                            </div>
+                        </div>
+
+                        <div class="profile-stats">
+                            <h4>İstatistikler</h4>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-value" id="statProjects">0</span>
+                                        <span class="stat-label">Proje</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-value" id="statTasks">0</span>
+                                        <span class="stat-label">Görev</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-value" id="statCompletion">0%</span>
+                                        <span class="stat-label">Tamamlanma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-actions">
+                            <button class="btn btn-primary" id="profileMessageBtn">
+                                <i class="fas fa-comment"></i> Mesaj Gönder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2023 portal.onurkazan.com.tr - Tüm hakları saklıdır.</p>
+                <p>Son güncelleme: 20 Eylül 2023</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Gizlilik Politikası</a>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Destek</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/kullanici.js"></script>
+</body>
+</html>
